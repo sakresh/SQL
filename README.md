@@ -4,7 +4,7 @@
 [Creating the Tables for the E-Commerce DataBase](createTable.md)
 
 ## Inserting Records to the Table
-[Creating the Tables for the E-Commerce DataBase](insert.md)
+[Inserting the records into the Tables for the E-Commerce DataBase](insert.md)
 
 ## Queries for the given questions
 [Queries with the questions](outputs.md)
