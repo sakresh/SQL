@@ -5,7 +5,7 @@ update vehicle set dailyrate = 68.00 where make = 'Mercedes';
 
 2. Delete a specific customer and all associated leases and payments.
 ```
-
+delete customer, lease, payment from customers join lease on customers.customerid = lease.customerid join payment on payment.leaseid = lease.leaseid where customer.customerid = 6;
 ```
 
 3. Rename the "paymentDate" column in the Payment table to "transactionDate".
@@ -45,7 +45,7 @@ select * from vehicle where `vehicleId` in (select `vehicleId` from lease where 
 
 10. Find the details of the most recent lease.
 ```
-
+select * from lease where `startdate` = (select max(startdate) from lease)
 ```
 
 11. List all payments made in the year 2023.
@@ -85,5 +85,5 @@ select * from customer where customerid = (select customerid from lease where le
 
 18. List All Cars with Their Current Lease Information.
 ```
-
+select * from `vehicle` inner join lease on lease.vehicleId = vehicle.vehicleId
 ```
