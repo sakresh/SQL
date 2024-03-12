@@ -1,6 +1,6 @@
 ## Creating the Vehicle table
 ```
-create table vehicle(vehicleId int primary key, make varchar(255), model varchar(255), year year, dailyrate int, stat int, passengerCapacity int, enginecapacity int);
+create table vehicle(vehicleId int primary key, make varchar(255), model varchar(255), year year, dailyrate decimal(2,2), stat int, passengerCapacity int, enginecapacity int);
 ```
 
 ## Creating the Customer table
