@@ -50,7 +50,7 @@ select * from vehicle where `vehicleId` in (select `vehicleId` from lease where 
 
 11. List all payments made in the year 2023.
 ```
-
+select * from payment where year(transactiondate) = 2023;
 ```
 
 12. Retrieve customers who have not made any payments.
@@ -70,7 +70,7 @@ select * from vehicle where `vehicleId` in (select `vehicleId` from lease where 
 
 15. List Car Details for Each Lease.
 ```
-
+select * from vehicle where `vehicleId` in (select `vehicleId` from lease group by leaseid);
 ```
 
 16. Retrieve Details of Active Leases with Customer and Car Information.
@@ -80,7 +80,7 @@ select * from vehicle where `vehicleId` in (select `vehicleId` from lease where 
 
 17. Find the Customer Who Has Spent the Most on Leases.
 ```
-
+select * from customer where customerid = (select customerid from lease where leaseid = (select leaseid from payment where amount = (select max(amount) from payment)));
 ```
 
 18. List All Cars with Their Current Lease Information.
